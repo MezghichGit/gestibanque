@@ -1,0 +1,58 @@
+{% extends 'front.html.twig' %}
+{% block content %}
+	<a name="inscription"></a>
+	<section class="site-section bg-light" id="contact-section" data-aos="fade">
+		<div class="container">
+			<div class="row mb-5">
+				<div class="col-12 text-center">
+					<h2 class="section-title mb-3">Créer un compte</h2>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-12 mb-5">
+
+					<form action="#" class="p-5 bg-white">
+
+						<h2 class="h4 text-black mb-5">Créer nouveau compte</h2>
+
+						<div class="row form-group">
+							<div class="col-md-6 mb-3 mb-md-0">
+								<label class="text-black" for="fname">Nom</label>
+								<input type="text" id="fname" class="form-control">
+							</div>
+							<div class="col-md-6">
+								<label class="text-black" for="lname">Prénom</label>
+								<input type="text" id="lname" class="form-control">
+							</div>
+						</div>
+
+						<div class="row form-group">
+
+							<div class="col-md-12">
+								<label class="text-black" for="email">Email</label>
+								<input type="email" id="email" class="form-control">
+							</div>
+						</div>
+
+						<div class="row form-group">
+
+							<div class="col-md-12">
+								<label class="text-black" for="password">Mot de passe</label>
+								<input type="password" id="password" class="form-control">
+							</div>
+						</div>
+						<div class="row form-group">
+							<div class="col-md-12">
+								<input type="submit" value="Créer compte" class="btn btn-primary btn-md text-white">
+							</div>
+						</div>
+
+
+					</form>
+				</div>
+
+			</div>
+		</div>
+	</section>
+{% endblock %}
