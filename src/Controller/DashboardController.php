@@ -4,8 +4,9 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
-
+use App\Services\Currency;
 class DashboardController extends AbstractController
 {
     #[Route('/', name: 'accueil')]
@@ -14,6 +15,23 @@ class DashboardController extends AbstractController
         //$email = $this->getUser()->getUserIdentifier();
         return $this->render('front/index.html.twig', []);
     }
+
+
+    #[Route('/cours', name: 'cours')]
+    public function conversion_devise(Request $request,Currency $currency): Response
+    {
+        $resultat="";
+        if($request->getMethod()=="POST")
+        {
+            $devise_depart="USD";
+            $devise_arrive=$request->get('devisearrive');
+            $montant=$request->get('montant');
+            $resultat = $currency->conversion($devise_depart,$devise_arrive,$montant);
+        }
+        return new Response($resultat);
+    }
+
+
 
     #[Route('/connexion', name: 'connexion')]
     public function connexion(): Response
